@@ -20,19 +20,11 @@ for each power:
         get results
     average result
 
-from py.nonlinear import NonLinear
-
-import py
-reload(py.nonlinear)
-
-from py.nonlinear import NonLinear
 nl = NonLinear(5, 5, 'noqb_aml')
 nl.run_all_trials()
 nl.get_results()
 
-
-
-nl.run_trial(0,2,'zorg')
+nl.run_trial(0,2,'alpha')
 nl.create_datasource(0, 'training', 2)
 
 '''
