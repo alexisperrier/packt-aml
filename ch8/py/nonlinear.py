@@ -1,10 +1,4 @@
 '''
-from importlib import reload
-import py
-reload(py.nonlinear)
-from py.nonlinear import NonLinear
-
-
 Runs several trials on the non linear dataset with Montecarlo cross validation
 
 Assuming

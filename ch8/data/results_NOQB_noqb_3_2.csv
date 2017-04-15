@@ -1,7 +1,0 @@
-p,k,ds_training_id,ds_evaluation_id,model_id,evaluation_id,rmse
-1,0,ds_training_noqb_p1_0,ds_evaluation_noqb_p1_0,mdl_noqb_p1_0,eval_noqb_p1_0,1.0679142981581042
-1,1,ds_training_noqb_p1_1,ds_evaluation_noqb_p1_1,mdl_noqb_p1_1,eval_noqb_p1_1,1.0695923861122827
-2,0,ds_training_noqb_p2_0,ds_evaluation_noqb_p2_0,mdl_noqb_p2_0,eval_noqb_p2_0,1.0674055308841857
-2,1,ds_training_noqb_p2_1,ds_evaluation_noqb_p2_1,mdl_noqb_p2_1,eval_noqb_p2_1,1.084807245074186
-3,0,ds_training_noqb_p3_0,ds_evaluation_noqb_p3_0,mdl_noqb_p3_0,eval_noqb_p3_0,0.8994322961282006
-3,1,ds_training_noqb_p3_1,ds_evaluation_noqb_p3_1,mdl_noqb_p3_1,eval_noqb_p3_1,0.8888587786982146

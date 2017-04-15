@@ -1,5 +1,0 @@
-p,k,ds_training_id,ds_evaluation_id,model_id,evaluation_id,rmse
-1,0,ds_training_zorax_p1_0,ds_evaluation_zorax_p1_0,mdl_zorax_p1_0,eval_zorax_p1_0,0.11611421718474843
-1,1,ds_training_zorax_p1_1,ds_evaluation_zorax_p1_1,mdl_zorax_p1_1,eval_zorax_p1_1,0.11753238721589086
-2,0,ds_training_zorax_p2_0,ds_evaluation_zorax_p2_0,mdl_zorax_p2_0,eval_zorax_p2_0,0.11522151956746082
-2,1,ds_training_zorax_p2_1,ds_evaluation_zorax_p2_1,mdl_zorax_p2_1,eval_zorax_p2_1,0.11447557770649838

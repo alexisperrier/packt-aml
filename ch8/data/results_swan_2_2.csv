@@ -1,5 +1,0 @@
-p,k,ds_training_id,ds_evaluation_id,model_id,evaluation_id,rmse
-1,0,ds_training_swan_p1_0,ds_evaluation_swan_p1_0,mdl_swan_p1_0,eval_swan_p1_0,
-1,1,ds_training_swan_p1_1,ds_evaluation_swan_p1_1,mdl_swan_p1_1,eval_swan_p1_1,
-2,0,ds_training_swan_p2_0,ds_evaluation_swan_p2_0,mdl_swan_p2_0,eval_swan_p2_0,
-2,1,ds_training_swan_p2_1,ds_evaluation_swan_p2_1,mdl_swan_p2_1,eval_swan_p2_1,
