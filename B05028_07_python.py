@@ -133,7 +133,8 @@ t0 = time.time()
 # declare the waiter and call the wait method on the evaluation
 waiter = client.get_waiter('evaluation_available')
 print("Waiting on evaluation to finish ")
-waiter.wait(FilterVariable='Name', EQ=name_id_generation('EVAL', '', trial)['Name'])
+waiter.wait(FilterVariable='Name',
+            EQ=name_id_generation('EVAL', '', trial)['Name'])
 t = time.time() - t0
 print("Evaluation has finished after %sm %ss"% (int(t/60), t%60) )
 # get the evaluation results
@@ -231,7 +232,9 @@ for k in range(10):
     schema['excludedAttributeNames'] = [original_features[k]]
     with open("data/%s"%trial['schema_filename'], 'w') as fp:
         json.dump(schema, fp, indent=4)
-        s3.Object('aml.packt', "RFS/%s"% trial['schema_filename']).put(Body=open("data/%s"%trial['schema_filename'], 'rb'))
+        s3.Object('aml.packt', "RFS/%s"% trial['schema_filename']).put(
+                            Body=open("data/%s"%trial['schema_filename'], 'rb')
+                        )
 
     # create datasource
     print("Datasource %s"% trial['datasource_training_name'])
@@ -241,9 +244,10 @@ for k in range(10):
         DataSourceName= trial['datasource_training_name'] ,
         DataSpec={
             'DataLocationS3': trial['data_s3'],
-            'DataRearrangement': '{
+            'DataRearrangement': '{                                 \
                 "splitting": {"percentBegin":0,"percentEnd":70}}',
-                'DataSchemaLocationS3': "s3://aml.packt/RFS/%s"% trial['schema_filename']
+                'DataSchemaLocationS3': "s3://aml.packt/RFS/%s"%    \
+                        trial['schema_filename']
             },
         ComputeStatistics=True
     )
@@ -256,8 +260,10 @@ for k in range(10):
         DataSourceName= trial['datasource_validation_name'] ,
         DataSpec={
             'DataLocationS3': trial['data_s3'],
-            'DataRearrangement': '{"splitting":{"percentBegin":70,"percentEnd":100}}',
-            'DataSchemaLocationS3': "s3://aml.packt/RFS/%s"% trial['schema_filename']
+            'DataRearrangement': '{                                   \
+                "splitting": {"percentBegin":70,"percentEnd":100}}',
+            'DataSchemaLocationS3': "s3://aml.packt/RFS/%s"%          \
+                        trial['schema_filename']
         },
         ComputeStatistics=True
     )
@@ -293,8 +299,13 @@ for k in range(10):
     print("Evaluation has finished ")
 
     response = client.get_evaluation( EvaluationId=trial['evaluation_id'] )
-    features_rmse[original_features[k]] = float(response['PerformanceMetrics']['Properties']['RegressionRMSE'])
-    print("[%s] RMSE %0.2f"% (original_features[k], float(response['PerformanceMetrics']['Properties']['RegressionRMSE'])) )
+    features_rmse[original_features[k]] = float(
+                response['PerformanceMetrics']['Properties']['RegressionRMSE']
+            )
+    print("[%s] RMSE %0.2f"% (
+        original_features[k],
+        float(response['PerformanceMetrics']['Properties']['RegressionRMSE']))
+    )
     # Now delete the resources
     print("Deleting datasources and model")
     response = client.delete_data_source(
