@@ -146,13 +146,13 @@ class NonLinear():
                 'SelectSqlQuery': self.generate_sql(p),
                 'DatabaseCredentials': {
                     'Username': 'alexperrier',
-                    'Password': 'pwd:Packt17'
+                    'Password': 'abcde'
                 },
                 'S3StagingLocation': 's3://aml.packt/data/ch9/',
                 'DataRearrangement': self.generate_data_rearrangement(split),
                 'DataSchema': self.generate_schema(p)
             },
-            RoleARN='arn:aws:iam::178277513911:role/service-role/AmazonMLRedshift_us-east-1_amlpackt',
+            RoleARN='arn:aws:iam::17827751111:role/service-role/AmazonMLRedshift_us-east-1_amlpackt',
             ComputeStatistics=True
         )
 
